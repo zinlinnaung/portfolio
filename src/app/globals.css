@@ -7,26 +7,43 @@
     @apply font-primary bg-primary text-white leading-loose;
   }
   .h1 {
-  @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  }
+
+  .h2 {
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+
+  .h3 {
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+
+  .text-outline-hover {
+    -webkit-text-stroke: 1px #00ff99;
+  }
 }
 
-.h2 {
-  @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+/* Scrollbar Styling */
+.scrollbar-thin-accent {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #00e187 transparent; /* fallback color: text-accent */
 }
 
-.h3 {
-  @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+.scrollbar-thin-accent::-webkit-scrollbar {
+  width: 3px;
 }
 
-.text-outline{
-  -webkit-text-stroke:1px #ffffff
-
+.scrollbar-thin-accent::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.text-outline-hover{
-  -webkit-text-stroke: 1px #00ff99;
+.scrollbar-thin-accent::-webkit-scrollbar-thumb {
+  background-color: #00e187; /* replace with your Tailwind accent color */
+  border-radius: 9999px;
 }
-}
-
 
 /* globals.css */

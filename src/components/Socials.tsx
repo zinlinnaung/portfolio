@@ -9,8 +9,6 @@ interface SocialsProps {
 const socials = [
   { icon: <FaGithub />, path: "" },
   { icon: <FaLinkedinIn />, path: "" },
-  { icon: <FaYoutube />, path: "" },
-  { icon: <FaTwitter />, path: "" },
 ];
 const Socials: React.FC<SocialsProps> = ({ containeryStyles, iconStyles }) => {
   return (
