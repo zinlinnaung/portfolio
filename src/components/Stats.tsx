@@ -4,7 +4,7 @@ import React from "react";
 
 const stats = [
   {
-    num: 2,
+    num: 4,
     text: "Years of experience",
   },
   {

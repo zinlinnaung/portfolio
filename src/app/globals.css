@@ -5,7 +5,9 @@
 @layer base {
   body {
     @apply font-primary bg-primary text-white leading-loose;
+    overflow-y: scroll; /* ensure scrollbar always visible */
   }
+
   .h1 {
     @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
   }
@@ -25,25 +27,31 @@
   .text-outline-hover {
     -webkit-text-stroke: 1px #00ff99;
   }
-}
 
-/* Scrollbar Styling */
-.scrollbar-thin-accent {
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #00e187 transparent; /* fallback color: text-accent */
-}
+  /* ✅ Global Scrollbar Styling */
+  /* Chrome, Edge, Safari */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
 
-.scrollbar-thin-accent::-webkit-scrollbar {
-  width: 3px;
-}
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-.scrollbar-thin-accent::-webkit-scrollbar-track {
-  background: transparent;
-}
+  ::-webkit-scrollbar-thumb {
+    background-color: #00e187;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+  }
 
-.scrollbar-thin-accent::-webkit-scrollbar-thumb {
-  background-color: #00e187; /* replace with your Tailwind accent color */
-  border-radius: 9999px;
-}
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #00ff99;
+  }
 
-/* globals.css */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #00e187 transparent;
+  }
+}
